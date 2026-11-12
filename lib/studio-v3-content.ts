@@ -1,6 +1,12 @@
+// Site origin: an explicit NEXT_PUBLIC_SITE_URL wins; otherwise a Vercel production build uses the
+// project's current production domain (custom domain if one is attached, else *.vercel.app).
+// Preview and local builds fall back to localhost and therefore stay noindex.
+const vercelDomain = process.env.VERCEL_ENV === 'production' ? process.env.VERCEL_PROJECT_PRODUCTION_URL : undefined;
+const origin = process.env.NEXT_PUBLIC_SITE_URL || (vercelDomain ? `https://${vercelDomain}` : 'http://127.0.0.1:3000');
+
 export const site = {
   name: 'Shipkind',
-  url: (process.env.NEXT_PUBLIC_SITE_URL || 'http://127.0.0.1:3000').replace(/\/$/, ''),
+  url: origin.replace(/\/$/, ''),
   phone: '+77064267143',
   whatsapp: 'https://wa.me/77064267143',
   region: 'Казахстан',
