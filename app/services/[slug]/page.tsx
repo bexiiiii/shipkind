@@ -26,8 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!found) return {};
   const { offer, page } = found;
   const title = `${page.metaTitle} — от ${offer.price} ₸`;
-  const description = `${page.intro.split('. ')[0]}. Цена — от ${offer.price} ₸, срок — ${offer.time}. Студия ${site.name}, ${site.region}.`;
-  return { title, description, alternates: { canonical: `/services/${offer.id}` }, openGraph: { title, description, url: `/services/${offer.id}`, type: 'website', images: [ogImage] }, twitter: { card: 'summary_large_image', title, description, images: [ogImage.url] } };
+  const description = `${offer.title}: от ${offer.price} ₸, срок ${offer.time}. ${offer.description} Студия ${site.name}, ${site.region}.`;
+  // The price already makes the title long, so the brand suffix from the root template is dropped.
+  return { title: { absolute: title }, description, alternates: { canonical: `/services/${offer.id}` }, openGraph: { title, description, url: `/services/${offer.id}`, type: 'website', images: [ogImage] }, twitter: { card: 'summary_large_image', title, description, images: [ogImage.url] } };
 }
 
 export default async function ServicePage({ params }: Props) {

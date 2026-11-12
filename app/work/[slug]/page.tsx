@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const item = cases.find(entry => entry.id === slug);
   if (!item) return {};
   const title = `${item.name} — ${item.kind.toLowerCase()}: кейс`;
-  const description = `${item.teaser} ${item.approach}`.slice(0, 200);
+  const description = `${item.teaser} Кейс студии ${site.name}: ${item.scope.slice(0, 2).join(', ')}.`;
   return { title, description, alternates: { canonical: `/work/${item.id}` }, openGraph: { title, description, url: `/work/${item.id}`, type: 'article', images: [ogImage] }, twitter: { card: 'summary_large_image', title, description, images: [ogImage.url] } };
 }
 

@@ -73,7 +73,7 @@ export default function StudioV3() {
 
     <main id="main">
       <section className="v-token-hero" aria-labelledby="v-hero-title" ref={heroScene} onPointerMove={onHeroMove} onPointerLeave={event => { event.currentTarget.style.setProperty('--px', '0px'); event.currentTarget.style.setProperty('--py', '0px'); }}>
-        <div className="v-portrait-object" aria-hidden="true"><Image src="/images/hero-vr-woman.png" alt="" fill priority unoptimized sizes="(max-width: 700px) 100vw, 58vw" /><Image className="v-portrait-blur" src="/images/hero-vr-woman.png" alt="" fill unoptimized sizes="(max-width: 700px) 100vw, 58vw" /></div>
+        <div className="v-portrait-object" aria-hidden="true"><Image src="/images/hero-vr-woman.webp" alt="" fill priority unoptimized sizes="(max-width: 700px) 100vw, 58vw" /><Image className="v-portrait-blur" src="/images/hero-vr-woman.webp" alt="" fill unoptimized sizes="(max-width: 700px) 100vw, 58vw" /></div>
         <div className="v-portrait-copy"><h1 id="v-hero-title">Сайты, приложения<br />и AI-агенты для бизнеса.</h1><p>Студия разработки в Казахстане. Цены — от 200 000 ₸, сроки — от 1 недели.</p><div className="v-portrait-actions"><button type="button" onClick={() => goToContact()}>Обсудить проект <ArrowUpRight size={18} /></button><a href="#work">Посмотреть работы <ArrowUpRight size={18} /></a></div></div>
       </section>
 
@@ -104,7 +104,7 @@ export default function StudioV3() {
       <section className="v-pricing v-pricing-reference" id="pricing" aria-labelledby="v-pricing-title">
         <div className="v-pricing-heading"><span>СТОИМОСТЬ / ОРИЕНТИРЫ</span><h2 id="v-pricing-title">Сколько стоит<br />начать проект.</h2><p>Три частых формата. Точную смету даём после короткого разговора о задаче.</p></div>
         <div className="v-pricing-cards">{plans.map((item, index) => <article className="v-price-card" key={item.name}>
-          <div className="v-price-card-top"><span className="v-price-pill">{item.time}</span><h3>{item.name}</h3><p className="v-price-value">от <strong>{item.price} ₸</strong></p><div className="v-price-art"><Image src={index === 0 ? '/images/price-landing.png' : index === 1 ? '/images/price-business.png' : '/images/price-mvp.png'} alt="" fill unoptimized sizes="(max-width: 700px) 45vw, 170px" /></div></div>
+          <div className="v-price-card-top"><span className="v-price-pill">{item.time}</span><h3>{item.name}</h3><p className="v-price-value">от <strong>{item.price} ₸</strong></p><div className="v-price-art"><Image src={index === 0 ? '/images/price-landing.webp' : index === 1 ? '/images/price-business.webp' : '/images/price-mvp.webp'} alt="" fill unoptimized sizes="(max-width: 700px) 45vw, 170px" /></div></div>
           <div className="v-price-card-body"><p>{item.fit}</p><span>Что входит:</span><ul>{item.scope.map(part => <li key={part}><Check size={15} />{part}</li>)}</ul><button type="button" onClick={() => goToContact(item.service)}>Обсудить проект <ArrowUpRight size={17} /></button></div>
         </article>)}</div>
         <div className="v-price-list"><h3>Все услуги и цены</h3><table><thead><tr><th scope="col">Услуга</th><th scope="col">Срок</th><th scope="col">Цена</th></tr></thead><tbody>{offerings.map(item => <tr key={item.id}><th scope="row"><a href={`/services/${item.id}`}>{item.title}</a></th><td>{item.time}</td><td>от {item.price} ₸</td></tr>)}</tbody></table></div>
