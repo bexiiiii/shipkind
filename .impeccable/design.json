@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T15:44:21.059482+00:00",
+  "title": "Design System: FORMA Studio",
+  "extensions": {
+    "colorMeta": {
+      "night": {
+        "role": "primary",
+        "displayName": "Night",
+        "canonical": "#050a16",
+        "tonalRamp": [
+          "#02040a",
+          "#050a16",
+          "#111b35",
+          "#263458",
+          "#455578",
+          "#7889a9",
+          "#b9c7db",
+          "#eff3f9"
+        ]
+      },
+      "navy": {
+        "role": "primary",
+        "displayName": "Navy",
+        "canonical": "#101a38",
+        "tonalRamp": [
+          "#050a16",
+          "#101a38",
+          "#203259",
+          "#365080",
+          "#5873a5",
+          "#8299c0",
+          "#bbc9df",
+          "#f1f4fa"
+        ]
+      },
+      "blue-accent": {
+        "role": "secondary",
+        "displayName": "Blue accent",
+        "canonical": "#83a7ff",
+        "tonalRamp": [
+          "#142d72",
+          "#244ca0",
+          "#3e6bd0",
+          "#608aea",
+          "#83a7ff",
+          "#a9c1ff",
+          "#d0ddff",
+          "#f3f6ff"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#f7f4fb",
+        "tonalRamp": [
+          "#24212a",
+          "#49444f",
+          "#706976",
+          "#98909e",
+          "#bcb5c4",
+          "#d8d2df",
+          "#eeeaf2",
+          "#f7f4fb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Hero display",
+        "purpose": "Centered first-viewport promise."
+      },
+      "editorial": {
+        "displayName": "Portfolio editorial",
+        "purpose": "Works heading inside white frame."
+      }
+    },
+    "shadows": [
+      {
+        "name": "service-card",
+        "value": "0 10px 30px #314fa719",
+        "purpose": "Soft low elevation on white service cards."
+      }
+    ],
+    "motion": [
+      {
+        "name": "section-reveal",
+        "value": "opacity and translateY over .6s",
+        "purpose": "One-time appearance on scroll; disabled for reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "700px"
+      },
+      {
+        "name": "tablet",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Navigation capsule",
+      "kind": "nav",
+      "refersTo": "nav-capsule",
+      "description": "Separate dark link capsule on hero.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#services\">Услуги</a><a href=\"#work\">Работы</a><a href=\"#pricing\">Стоимость</a><a href=\"#faq\">FAQ</a></nav>",
+      "css": ".ds-nav{display:flex;gap:28px;align-items:center;height:64px;width:max-content;padding:0 31px;background:#0b1124b8;color:#fff;border:1px solid #ffffff38;border-radius:99px;font:500 13px Inter,Arial,sans-serif}.ds-nav a{color:inherit;text-decoration:none}.ds-nav a:hover{text-decoration:underline}.ds-nav a:focus-visible{outline:2px solid #83a7ff;outline-offset:4px}"
+    },
+    {
+      "name": "White action",
+      "kind": "button",
+      "refersTo": "nav-action",
+      "description": "Primary action on dark hero and blue footer.",
+      "html": "<button class=\"ds-action\">Обсудить проект ↗</button>",
+      "css": ".ds-action{height:64px;border:0;border-radius:99px;padding:0 26px;background:#fff;color:#141820;font:700 13px Inter,Arial,sans-serif;cursor:pointer}.ds-action:hover{background:#f0f3ff}.ds-action:focus-visible{outline:2px solid #83a7ff;outline-offset:3px}"
+    },
+    {
+      "name": "Service card",
+      "kind": "card",
+      "refersTo": "service-card",
+      "description": "Static art above one useful sentence and action.",
+      "html": "<article class=\"ds-service\"><div class=\"ds-art\"></div><h3>Веб-сервисы</h3><p>Соберём ключевые сценарии и первую работающую версию.</p><a href=\"#\">Обсудить задачу ↗</a></article>",
+      "css": ".ds-service{width:270px;min-height:330px;background:#fff;color:#141820;padding:6px;border-radius:18px;box-shadow:0 10px 30px #314fa719;font-family:Inter,Arial,sans-serif}.ds-art{height:180px;background:#f6f7f9;border-radius:12px}.ds-service h3{font-size:22px;margin:18px 13px 9px}.ds-service p{font-size:11px;line-height:1.45;color:#697080;margin:0 13px 18px}.ds-service a{display:block;margin:0 13px 15px;color:#1642a6;font-size:11px;font-weight:700;text-decoration:none}.ds-service a:hover{text-decoration:underline}.ds-service a:focus-visible{outline:2px solid #83a7ff}"
+    },
+    {
+      "name": "Work tile",
+      "kind": "card",
+      "refersTo": "work-tile",
+      "description": "Small abstract concept preview.",
+      "html": "<article class=\"ds-work\"><span>AURA</span><small>Интернет-магазин</small></article>",
+      "css": ".ds-work{width:220px;height:150px;display:flex;flex-direction:column;justify-content:end;padding:16px;border-radius:12px;background:linear-gradient(135deg,#f4f4f8,#d9dcff);color:#141820;text-align:center;font-family:Inter,Arial,sans-serif}.ds-work span{font-size:18px;font-weight:700}.ds-work small{font-size:11px;color:#697080}"
+    },
+    {
+      "name": "Pricing card",
+      "kind": "card",
+      "refersTo": "price-card",
+      "description": "White project-price card with cream feature panel.",
+      "html": "<article class=\"ds-price\"><div class=\"ds-price-top\"><small>2–3 недели</small><h3>Лендинг</h3><strong>от $900</strong></div><p>Структура, дизайн и адаптивная разработка.</p></article>",
+      "css": ".ds-price{width:300px;padding:10px;background:#fff;color:#141820;border-radius:18px;font-family:Inter,Arial,sans-serif}.ds-price-top{height:160px;padding:20px;background:#f7f3ee;border-radius:14px}.ds-price-top small{font-size:11px}.ds-price-top h3{font-size:25px;margin:28px 0 0}.ds-price-top strong{font-size:30px}.ds-price p{font-size:12px;line-height:1.5;padding:10px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Свет и предмет на тёмной сцене",
+    "overview": "Чёрная подложка hero и единое navy-поле услуг и работ держат страницу вместе. Реалистичный портрет, глянцевые предметные иллюстрации и синий световой футер дают характер; белые карточки и короткий текст сохраняют ясность.",
+    "keyCharacteristics": [
+      "Три отдельные капсулы навигации",
+      "Центрированный VR-портрет без теней на тексте",
+      "Восемь статичных услуг",
+      "Компактное горизонтальное портфолио",
+      "Три цены с разными прозрачными ассетами",
+      "Синий CTA над белым футером"
+    ],
+    "rules": [
+      {
+        "name": "The One Navy Field Rule",
+        "body": "Услуги и работы стоят на едином тёмно-синем поле.",
+        "section": "colors"
+      },
+      {
+        "name": "The Clear Type Rule",
+        "body": "Читаемость hero создаётся затемнением и размытием изображения, а не тенью текста.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do label all portfolio concepts truthfully.",
+      "Do use the exact user supplied hero gradient over black.",
+      "Do preserve reduced-motion behavior."
+    ],
+    "donts": [
+      "Don’t animate service images on hover.",
+      "Don’t restore portfolio tabs or redundant section labels.",
+      "Don’t replace the blue beam footer with the old landscape."
+    ]
+  }
+}

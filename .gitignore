@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.env*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+.backup-*/
+.playwright-cli/
+.impeccable/review/
+.impeccable/hook.cache.json
+.space-test
+.vercel
