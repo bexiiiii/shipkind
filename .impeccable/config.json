@@ -1,1 +1,14 @@
-{}
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "manrope",
+        "createdAt": "2026-11-12T18:22:04.788Z",
+        "reason": "agent decided: link-preview image is rendered by satori, which cannot load the site's Inter woff2; bundled Manrope ttf is the closest Cyrillic face"
+      }
+    ]
+  }
+}

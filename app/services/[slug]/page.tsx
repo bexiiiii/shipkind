@@ -7,6 +7,8 @@ import { cases, offerings, site, steps } from '@/lib/studio-v3-content';
 import { servicePages } from '@/lib/service-pages';
 
 type Props = { params: Promise<{ slug: string }> };
+// A page-level openGraph object replaces the root one, so the shared preview card is named again here.
+const ogImage = { url: '/opengraph-image', width: 1200, height: 630 };
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -25,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { offer, page } = found;
   const title = `${page.metaTitle} — от ${offer.price} ₸`;
   const description = `${page.intro.split('. ')[0]}. Цена — от ${offer.price} ₸, срок — ${offer.time}. Студия ${site.name}, ${site.region}.`;
-  return { title, description, alternates: { canonical: `/services/${offer.id}` }, openGraph: { title, description, url: `/services/${offer.id}`, type: 'website' } };
+  return { title, description, alternates: { canonical: `/services/${offer.id}` }, openGraph: { title, description, url: `/services/${offer.id}`, type: 'website', images: [ogImage] }, twitter: { card: 'summary_large_image', title, description, images: [ogImage.url] } };
 }
 
 export default async function ServicePage({ params }: Props) {

@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   alternates: { canonical: '/' },
-  openGraph: { title, description: site.description, url: '/', siteName: site.name, locale: 'ru_KZ', type: 'website', images: [{ url: '/images/blue.webp', width: 1536, height: 1024, alt: site.tagline }] },
-  twitter: { card: 'summary_large_image', title, description: site.description, images: ['/images/blue.webp'] },
+  openGraph: { title, description: site.description, url: '/', siteName: site.name, locale: 'ru_KZ', type: 'website' },
+  twitter: { card: 'summary_large_image', title, description: site.description },
   // Indexed only on the real domain: set NEXT_PUBLIC_SITE_URL before publishing.
   robots: isPublicSite ? { index: true, follow: true, googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } } : { index: false, follow: false },
   verification: { google: process.env.GOOGLE_SITE_VERIFICATION, yandex: process.env.YANDEX_VERIFICATION },

@@ -9,6 +9,8 @@ import { cases, offerings, site } from '@/lib/studio-v3-content';
 import { caseService } from '@/lib/service-pages';
 
 type Props = { params: Promise<{ slug: string }> };
+// A page-level openGraph object replaces the root one, so the shared preview card is named again here.
+const ogImage = { url: '/opengraph-image', width: 1200, height: 630 };
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -21,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!item) return {};
   const title = `${item.name} — ${item.kind.toLowerCase()}: кейс`;
   const description = `${item.teaser} ${item.approach}`.slice(0, 200);
-  return { title, description, alternates: { canonical: `/work/${item.id}` }, openGraph: { title, description, url: `/work/${item.id}`, type: 'article', images: [{ url: item.shots[0].src, width: item.shots[0].width, height: item.shots[0].height, alt: item.shots[0].alt }] } };
+  return { title, description, alternates: { canonical: `/work/${item.id}` }, openGraph: { title, description, url: `/work/${item.id}`, type: 'article', images: [ogImage] }, twitter: { card: 'summary_large_image', title, description, images: [ogImage.url] } };
 }
 
 export default async function CasePage({ params }: Props) {
